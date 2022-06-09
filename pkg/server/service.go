@@ -17,7 +17,10 @@ func (a *api) checkMutant(w http.ResponseWriter, r *http.Request) {
 
 func mutantHandler(sample []string, w http.ResponseWriter, r *http.Request) {
 
-	if isMutant(sample) {
+	if !checkString(sample) {
+		w.WriteHeader(http.StatusForbidden)
+		fmt.Fprintf(w, "UNVALID DNA STRING SEQUENCE")
+	} else if isMutant(sample) {
 		w.WriteHeader(http.StatusOK)
 		fmt.Fprintf(w, "HTTP 200-OK")
 	} else {

@@ -16,14 +16,15 @@ con un json que contenga la secuencia de ADN a revisar.
 ```
 docker-compose -f docker-compose.yaml up
 ```
-3. También puedes clonar el repositorio, luego:
+3. También puedes clonar el repositorio, luego con este comando:
 ```
 go run .
 ```
+correr la aplicacion en local.
 
 ## Respuestas
-- La aplicacionr recibe la secuencia enviada y:
+- La aplicación recibe la secuencia enviada y:
     - Responde con un header "HTTP 200-OK", estado que también retornará si al revisar secuencia del humano se determina que es *Mutante*.
-    - Responde con un header "UNVALID DNA STRING SEQUENCE", y estado "HTTP 403-FORBIDDEN" si alguna letra secuencia de ADN es diferente a A C T G.
+    - Responde con un header "UNVALID DNA STRING SEQUENCE", y estado "HTTP 403-FORBIDDEN" si alguna letra secuencia de ADN es diferente a **A C T G**.
     - Responde con un header "HTTP 403-FORBIDDEN", estado que también retornará si al revisar secuencia del humano se determina que NO es *Mutante*.
 

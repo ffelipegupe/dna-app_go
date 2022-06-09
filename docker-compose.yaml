@@ -1,0 +1,6 @@
+version: '3'
+services:
+  dna-app:
+    image: public.ecr.aws/i6t3e3n1/dna-app:1.0
+    ports:
+     - 3000:8080
